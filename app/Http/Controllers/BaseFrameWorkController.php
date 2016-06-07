@@ -12,8 +12,13 @@ class BaseFrameworkController extends BaseController
 {
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
     
-public function Registry() {
+public function Register() {
     
+      
+
+        return view('registration.register');
+
+
  
 }
 }

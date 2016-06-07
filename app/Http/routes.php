@@ -2,5 +2,5 @@
 
 Route::get('/', array(
     'as' => 'Register',
-    'uses' => 'BaseFrameController@Register'
+    'uses' => 'BaseFrameWorkController@Register'
 ));
