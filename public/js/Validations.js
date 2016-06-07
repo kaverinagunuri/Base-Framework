@@ -80,6 +80,7 @@ $(document).ready(function () {
         if (fullname == false ||LastName==false|| Email == false ||password == false || changePassword != Confirm)
         {
             event.preventDefault();
+              $("#confirmError").html("Confirm Password should be same as with Password");
         }
 
     });

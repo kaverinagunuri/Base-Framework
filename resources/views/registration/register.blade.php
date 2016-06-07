@@ -33,10 +33,10 @@
             <div class="register-box-body">
                 <p class="login-box-msg">Register a new membership</p>
 
-                <form action="#" method="post">
+                <form action="{{URL::route('Register')}}" method="post">
                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-group has-feedback">
-                        <input type="text" class="form-control" placeholder="Full name" id="Full_name" name="FullName">
+                        <input type="text" class="form-control" placeholder="Full name" id="Full_name" name="FirstName">
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                         <span class="error" id="Fullname_error"></span>
 
@@ -47,35 +47,35 @@
                         <span class="error" id="LastName_error"></span>
 
                     </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="male">Male</label>
+                    <div class="checkbox" >
+                        <label><input type="radio" value="male" name="gender">Male</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" value="female" required>Female</label>
+                        <label><input type="radio" value="female" name="gender" required>Female</label>
                     </div>
-                  
+
                     <div class='form-group has-feedback'>
-                        <input type="email" class="form-control" placeholder="Email" id="Email" name="Email">
+                        <input type="email" class="form-control" placeholder="Email" id="Email" name="UserName">
                         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                         <span class="error" id="Email_error"></span>
                     </div>
-                     <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Password" name="Password" id="Password">
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            <span class="error" id="PasswordError"></span>
-        </div>
-        <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Confirm Password"  id="Confirm"/>
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            <span class="error" id="confirmError"></span>
-        </div>
+                    <div class="form-group has-feedback">
+                        <input type="password" class="form-control" placeholder="Password" name="Password" id="Password">
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        <span class="error" id="PasswordError"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="password" class="form-control" placeholder="Confirm Password"  id="Confirm"/>
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        <span class="error" id="confirmError"></span>
+                    </div>
 
                     <div class="row">
 
                         <div class="col-xs-4">
                             <button type="submit" id="next" class="btn btn-primary btn-block btn-flat">Registry</button>
                         </div>
-                        
+
                     </div>
                 </form>
 
