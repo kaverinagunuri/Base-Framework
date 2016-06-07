@@ -31,7 +31,7 @@
 
         <link href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="{{asset('css/map.css')}}">
+       
         <link rel="stylesheet" href="{{asset('/css/styles.css')}}">
 
     </head>
@@ -289,14 +289,14 @@
                                             <a href="#" class="btn btn-default btn-flat">Profile</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="{{URL::route('logout')}}" class="btn btn-default btn-flat">Sign out</a>
+                                            <a href="" class="btn btn-default btn-flat">Sign out</a>
                                         </div>
                                     </li>
                                 </ul>
                             </li>
                             <!-- Control Sidebar Toggle Button -->
                             <li>
-                                <a href="{{URL::route('logout')}}" data-toggle="control-sidebar"><i class="glyphicon glyphicon-log-out"></i>Log Out</a>
+                                <a href="" data-toggle="control-sidebar"><i class="glyphicon glyphicon-log-out"></i>Log Out</a>
                             </li>
                         </ul>
                     </div>
@@ -353,7 +353,7 @@
                     <ul class="sidebar-menu">
                         <li class="header">MAIN NAVIGATION</li>
                          <li class="treeview active ">
-                            <a href="{{URL::route('Dashboard')}}">
+                            <a href="">
                                 <i class="glyphicon glyphicon-dashboard"></i>
                                 <span>DashBoard</span>
                                 
@@ -361,62 +361,7 @@
                            
                         </li>
 
-                        <li class="treeview active ">
-                            <a href="{{URL::route('UpdateProfile')}}">
-                                <i class="glyphicon glyphicon-edit"></i>
-                                <span>Update Profile</span>
-                              </a>
-                          
-                        </li>
-                        
-                        <li class="treeview active" >
-                            <a href="{{URL::route('ChangePassword')}}">
-                                <i class="glyphicon glyphicon-pencil"></i>
-                                <span>Change Password</span>
-                            </a>
-                           
-                        </li>
-                        <li class="treeview active">
-                            <a href="{{URL::route('viewProfile')}}"><i class="glyphicon glyphicon-eye-open"></i> View Profile</a>
-                        </li>
-                       
-                        <li class="treeview active "><a href="{{URL::route('FileUpload')}}"><i class="glyphicon glyphicon-upload"></i> File Upload</a></li>
-                        <li class="treeview active "><a href="{{URL::route('FileDataTables')}}"><i class="glyphicon glyphicon-eye-open"></i> View Files</a></li>
-                           
-                   
-                         <li class="treeview active ">
-                            <a href="{{URL::route('timezonetables')}}">
-                                <i class="glyphicon glyphicon-time"></i>
-                                <span>Time Zone</span>
-                               
-                            </a>
-                           
-                        </li>
-                        <li class="treeview active ">
-                            <a href="#">
-                                <i class="glyphicon glyphicon-tags"></i> <span>Export to Excel</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="{{URL::route('excelReg')}}"><i class="fa fa-circle-o"></i> Export Register to Excel</a></li>
-                                <li><a href="{{URL::route('excelLogs')}}"><i class="fa fa-circle-o"></i> Export User Logs to Excel</a></li>
-                                <li><a href="{{URL::route('excelFile')}}"><i class="fa fa-circle-o"></i> Export File Uploads to Excel</a></li>
-                                <li><a href="{{URL::route('excelTimeZone')}}"><i class="fa fa-circle-o"></i> Export Time Zone to Excel</a></li>
-                            </ul>
-                        </li>
-                        <li class="treeview active">
-                            <a href="#">
-                                <i class="glyphicon glyphicon-tags"></i> <span>Export to PDF</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="{{URL::route('PDFReg')}}"><i class="fa fa-circle-o"></i> Export Register to PDF</a></li>
-                                <li><a href="{{URL::route('PDFLogs')}}"><i class="fa fa-circle-o"></i> Export User Logs to PDF</a></li>
-                                <li><a href="{{URL::route('PDFFile')}}"><i class="fa fa-circle-o"></i> Export File Uploads to PDF</a></li>
-                                <li><a href="{{URL::route('PDFTimeZone')}}"><i class="fa fa-circle-o"></i> Export Time Zone to PDF</a></li>
-                            </ul>
-                        </li>
-                       
+                     
 
                     </ul>
                 </section>
@@ -433,9 +378,6 @@
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
-        <script type="text/javascript" src="{{asset('/js/map.js')}}"></script>
-        <script type="text/javascript" src="{{asset('/js/Validations.js')}}"></script>
-        <script src="{{asset('js/progress.js')}}"></script>
 
         <script src="//oss.maxcdn.com/jquery.form/3.50/jquery.form.min.js"></script>
         <script src = "/bootstrap/js/bootstrap.min.js" ></script>
@@ -449,13 +391,7 @@
 
         <script src="/dist/js/demo.js"></script>
 
-        <script src="{{ asset ("/js/jquery-2.2.2.min.js") }}"></script>
-
-        <script src="{{asset('/plugins/datatables/jquery.dataTables.min.js')}}"></script> 
-        <script src="{{asset('/plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
-        @yield('script')
-
-
+        
 
     </body>
 </html>

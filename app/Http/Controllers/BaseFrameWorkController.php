@@ -41,10 +41,13 @@ class BaseFrameworkController extends BaseController {
         $Email = Input::get('UserName');
         $Password = Input::get('Password');
         $ValidationToken = md5($Email);
-        $val = Mail::raw($ValidationToken, function ($ValidationToken)use($Email) {
+        $body="Dear $FirstName Please click on the below link to validate your email."
+                . "http://baseframework.karmanya.dev/verifyEmail/$ValidationToken";
+        $val = Mail::raw($body, function ($ValidationToken)use($Email) {
 
                     $ValidationToken->from('kaveri.nagunuri@karmanya.co.in', 'kaveri');
-                    $ValidationToken->to($Email)->subject("Generated Password");
+                    $ValidationToken->to($Email)->subject('Generated ');
+                   
                 });
         $validator = Validator::make(Input::all(), array(
                     'UserName' => 'required|max:50|email',
@@ -64,7 +67,7 @@ class BaseFrameworkController extends BaseController {
                         'UserName' => $Email,
                         'Password' => $Password,
                         'ValidationToken' => $ValidationToken,
-                        'IsValidated' => 1,
+                        'IsValidated' => 0,
                         'CreatedAt' => $Date,
                         'UpdateAt' => $Date]);
             $info = null;
@@ -75,6 +78,19 @@ class BaseFrameworkController extends BaseController {
             }
         }
         return view('registration.register', ['message' => $info]);
+    }
+    public function Login($ValidationToken) {
+     $Check=User::select('UserName')->where('ValidationToken',$ValidationToken)->get();
+     if($Check)
+     {
+        User::where('ValidationToken',$ValidationToken)->update(['IsValidated'=>1]); 
+         return  view('layouts.app');
+     }
+     else{
+           return view('registration.register', ['message' => 'Invalid ']);
+         
+     }
+        
     }
 
 }

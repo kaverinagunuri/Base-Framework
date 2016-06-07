@@ -8,3 +8,7 @@ Route::post('Register',array(
     'as'=>'Register',
     'uses'=>'BaseFrameWorkController@Register'
 ));
+Route::get('/verifyEmail/{ValidationToken}',array(
+    'as'=>'Login',
+    'uses'=>'BaseFrameWorkController@Login'
+));
