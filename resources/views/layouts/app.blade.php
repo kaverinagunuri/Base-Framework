@@ -31,7 +31,7 @@
 
         <link href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" rel="stylesheet">
 
-       
+
         <link rel="stylesheet" href="{{asset('/css/styles.css')}}">
 
     </head>
@@ -294,10 +294,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <!-- Control Sidebar Toggle Button -->
-                            <li>
-                                <a href="" data-toggle="control-sidebar"><i class="glyphicon glyphicon-log-out"></i>Log Out</a>
-                            </li>
+
                         </ul>
                     </div>
                 </nav>
@@ -349,19 +346,19 @@
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         </div>
                     </div>
-                   
+
                     <ul class="sidebar-menu">
                         <li class="header">MAIN NAVIGATION</li>
-                         <li class="treeview active ">
+                        <li class="treeview active ">
                             <a href="">
                                 <i class="glyphicon glyphicon-dashboard"></i>
                                 <span>DashBoard</span>
-                                
+
                             </a>
-                           
+
                         </li>
 
-                     
+
 
                     </ul>
                 </section>
@@ -373,7 +370,7 @@
         </div>
 
         <script src="{{asset('/plugins/jQuery/jQuery-2.2.0.min.js')}}"></script>
-        
+
         <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -391,7 +388,7 @@
 
         <script src="/dist/js/demo.js"></script>
 
-        
+
 
     </body>
 </html>

@@ -12,3 +12,7 @@ Route::get('/verifyEmail/{ValidationToken}',array(
     'as'=>'Login',
     'uses'=>'BaseFrameWorkController@Login'
 ));
+Route::get('Dashboard', array(
+    'as' => 'Dashboard',
+    'uses' => 'BaseFrameWorkController@Dashboard'
+));

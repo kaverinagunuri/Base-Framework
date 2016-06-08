@@ -41,13 +41,12 @@ class BaseFrameworkController extends BaseController {
         $Email = Input::get('UserName');
         $Password = Input::get('Password');
         $ValidationToken = md5($Email);
-        $body="Dear $FirstName Please click on the below link to validate your email."
+        $body = "Dear $FirstName Please click on the below link to validate your email."
                 . "http://baseframework.karmanya.dev/verifyEmail/$ValidationToken";
         $val = Mail::raw($body, function ($ValidationToken)use($Email) {
 
                     $ValidationToken->from('kaveri.nagunuri@karmanya.co.in', 'kaveri');
                     $ValidationToken->to($Email)->subject('Generated ');
-                   
                 });
         $validator = Validator::make(Input::all(), array(
                     'UserName' => 'required|max:50|email',
@@ -79,17 +78,27 @@ class BaseFrameworkController extends BaseController {
         }
         return view('registration.register', ['message' => $info]);
     }
+
     public function Login($ValidationToken) {
-     $Check=User::select('UserName')->where('ValidationToken',$ValidationToken)->get();
-     if($Check)
-     {
-        User::where('ValidationToken',$ValidationToken)->update(['IsValidated'=>1]); 
-         return  view('layouts.app');
-     }
-     else{
-           return view('registration.register', ['message' => 'Invalid ']);
+        $Check = User::select('UserName')->where('ValidationToken', $ValidationToken)->count();
+        if ($Check == 0) {
+            $validate="Invalid Token";
+            return Redirect::route('index')
+                            ->withErrors($validate)
+                            ->withInput();
+            //return view('registration.register', ['message' => 'Invalid Token ']);
+        } else {
+
+            User::where('ValidationToken', $ValidationToken)->update(['IsValidated' => 1]);
+           return Redirect::route('index');
+                  
+             //return view('layouts.app');
          
-     }
+        }
+    }
+    public function Dashboard() {
+       
+           return view('layouts.app');
         
     }
 
